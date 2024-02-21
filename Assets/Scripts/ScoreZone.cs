@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class ScoreZone : MonoBehaviour
 {
+    GameManager gameManager;
+    private void Awake()
+    {
+        gameManager = GameManager.instance;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.score += 1;
+            gameManager.score += 1;
+            gameManager.ScoreUpdate();
         }
     }
 }

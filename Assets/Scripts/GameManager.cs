@@ -28,12 +28,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine("ObstacleStart");
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-        scoreText.text = score.ToString();
-    }
-
     IEnumerator ObstacleStart()
     {
         do
@@ -58,5 +52,9 @@ public class GameManager : MonoBehaviour
     public void HomeButton()
     {
         SceneManager.LoadScene("HomeScene");
+    }
+    public void ScoreUpdate()
+    {
+        scoreText.text = score.ToString();
     }
 }
