@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputController : CharacterController
+public class PlayerInputController : MonoBehaviour
 {
     private Camera _camera;
-
+    private Vector3 movement = new Vector3(0, 1);
     private void Awake()
     {
         _camera = Camera.main;
@@ -14,6 +14,6 @@ public class PlayerInputController : CharacterController
     public void OnMove()
     {
         //Debug.Log("Move");
-        CallMoveEvnet();
+        transform.position += movement;
     }
 }
